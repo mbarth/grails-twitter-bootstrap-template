@@ -1,122 +1,69 @@
 <!doctype html>
 <html>
-	<head>
-		<meta name="layout" content="main"/>
-		<title>Welcome to Grails</title>
-		<style type="text/css" media="screen">
-			#status {
-				background-color: #eee;
-				border: .2em solid #fff;
-				margin: 2em 2em 1em;
-				padding: 1em;
-				width: 12em;
-				float: left;
-				-moz-box-shadow: 0px 0px 1.25em #ccc;
-				-webkit-box-shadow: 0px 0px 1.25em #ccc;
-				box-shadow: 0px 0px 1.25em #ccc;
-				-moz-border-radius: 0.6em;
-				-webkit-border-radius: 0.6em;
-				border-radius: 0.6em;
-			}
+<head>
+   <meta name="layout" content="bootstrap"/>
+   <title>Welcome to Grails</title>
 
-			.ie6 #status {
-				display: inline; /* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
-			}
+</head>
 
-			#status ul {
-				font-size: 0.9em;
-				list-style-type: none;
-				margin-bottom: 0.6em;
-				padding: 0;
-			}
-            
-			#status li {
-				line-height: 1.3;
-			}
+<body>
+<div class="row-fluid">
+   <aside id="application-status" class="span3">
+      <div class="well sidebar-nav">
+         <h5>Grails Application Status</h5>
+         <ul>
+            <li>App version: <g:meta name="app.version"/></li>
+            <li>Grails version: <g:meta name="app.grails.version"/></li>
+            <li>Groovy version: ${org.codehaus.groovy.runtime.InvokerHelper.getVersion()}</li>
+            <li>JVM version: ${System.getProperty('java.version')}</li>
+            <li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
+            <li>Domains: ${grailsApplication.domainClasses.size()}</li>
+            <li>Services: ${grailsApplication.serviceClasses.size()}</li>
+            <li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
+         </ul>
+         <h5>Grails Installed Plugins</h5>
+         <ul>
+            <g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
+               <li>${plugin.name} - ${plugin.version}</li>
+            </g:each>
+         </ul>
+      </div>
+   </aside>
 
-			#status h1 {
-				text-transform: uppercase;
-				font-size: 1.1em;
-				margin: 0 0 0.3em;
-			}
+   <section id="main" class="span9">
 
-			#page-body {
-				margin: 2em 1em 1.25em 18em;
-			}
+      <div class="hero-unit">
+         <h2>Federated Organizations</h2>
 
-			h2 {
-				margin-top: 1em;
-				margin-bottom: 0.3em;
-				font-size: 1em;
-			}
+         <p>Using a <a href="http://twitter.github.com/bootstrap" rel="external"><em>Twitter
+         Bootstrap</em></a> look &amp; feel.</p>
 
-			p {
-				line-height: 1.5;
-				margin: 0.25em 0;
-			}
+      </div>
 
-			#controller-list ul {
-				list-style-position: inside;
-			}
+      <div class="row-fluid">
 
-			#controller-list li {
-				line-height: 1.3;
-				list-style-position: inside;
-				margin: 0.25em 0;
-			}
+         <div class="span4">
+            <h2>Trusted Data</h2>
 
-			@media screen and (max-width: 480px) {
-				#status {
-					display: none;
-				}
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempus accumsan arcu, et interdum dui consequat sit amet. Nullam dui sapien, iaculis bibendum suscipit id, accumsan faucibus enim. Ut viverra semper nibh nec porttitor. Aliquam erat volutpat. Vivamus sit amet pretium dui. Praesent vel condimentum quam. Aenean gravida ligula erat. Vivamus fermentum, leo eget eleifend aliquet, leo mi fringilla tellus, quis congue arcu odio ut sapien. Ut at lobortis erat.</p>
+         </div>
 
-				#page-body {
-					margin: 0 1em 1em;
-				}
+         <div class="span4">
+            <h2>Our Mission</h2>
 
-				#page-body h1 {
-					margin-top: 0;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div id="status" role="complementary">
-			<h1>Application Status</h1>
-			<ul>
-				<li>App version: <g:meta name="app.version"/></li>
-				<li>Grails version: <g:meta name="app.grails.version"/></li>
-				<li>Groovy version: ${org.codehaus.groovy.runtime.InvokerHelper.getVersion()}</li>
-				<li>JVM version: ${System.getProperty('java.version')}</li>
-				<li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
-				<li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-				<li>Domains: ${grailsApplication.domainClasses.size()}</li>
-				<li>Services: ${grailsApplication.serviceClasses.size()}</li>
-				<li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
-			</ul>
-			<h1>Installed Plugins</h1>
-			<ul>
-				<g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-					<li>${plugin.name} - ${plugin.version}</li>
-				</g:each>
-			</ul>
-		</div>
-		<div id="page-body" role="main">
-			<h1>Welcome to Grails</h1>
-			<p>Congratulations, you have successfully started your first Grails application! At the moment
-			   this is the default page, feel free to modify it to either redirect to a controller or display whatever
-			   content you may choose. Below is a list of controllers that are currently deployed in this application,
-			   click on each to execute its default action:</p>
+            <p>Pellentesque id nisl eget tortor congue egestas vel et ligula. Pellentesque molestie pretium elementum. Sed dapibus felis purus, nec molestie sapien. Quisque id leo enim, in consectetur nulla. Suspendisse eu adipiscing neque. Quisque ac purus nec orci venenatis molestie. Aliquam suscipit pellentesque mi, non convallis enim elementum ac. Etiam suscipit bibendum odio, eu egestas eros gravida eget. Aliquam vitae mauris a enim congue imperdiet. Cras dictum dolor ac mauris vestibulum at dapibus mi tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu tincidunt eros. Etiam lorem tellus, egestas vel eleifend at, ullamcorper feugiat leo. Morbi scelerisque auctor est, commodo elementum est sodales.</p>
+         </div>
 
-			<div id="controller-list" role="navigation">
-				<h2>Available Controllers:</h2>
-				<ul>
-					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-					</g:each>
-				</ul>
-			</div>
-		</div>
-	</body>
+         <div class="span4">
+            <h2>Join Us</h2>
+
+            <p>Praesent commodo gravida nibh, in pharetra nisi sagittis eget. Nullam facilisis sapien eu odio accumsan blandit. Sed id neque vitae lectus dapibus suscipit. Nam sagittis, tortor ac sagittis congue, eros leo tincidunt enim, id viverra orci tellus vel sapien. Donec euismod imperdiet placerat. Donec a elementum libero. Nulla ullamcorper ullamcorper egestas. Maecenas rhoncus elementum volutpat. Aenean eget semper nisi. Sed vitae velit diam.</p>
+         </div>
+
+      </div>
+
+   </section>
+</div>
+
+</body>
 </html>
