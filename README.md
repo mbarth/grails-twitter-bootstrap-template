@@ -13,7 +13,7 @@ Starting point for grails project using twitter bootstrap scaffolding.
 
 ## Installation
 
-1. clone project
+Clone project
 
 ```
 git clone git@github.com:mbarth/grails-twitter-bootstrap-template.git
@@ -21,13 +21,13 @@ mv grails-twitter-bootstrap-template your-app-name
 cd your-app-name
 ```
 
-2. Edit application.properties file changing the app.name property with the name of your application
+Edit application.properties file changing the app.name property with the name of your application
 
 ```
 app.name=your-app-name
 ```
 
-3. Launch Application
+Launch Application
 
 ```
 grails run-app
