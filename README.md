@@ -10,3 +10,14 @@ Starting point for grails project using twitter bootstrap scaffolding.
 
 1. Less files included and wired for responsive design.
 2. Uses [Webshims Lib] (http://afarkas.github.com/webshim/demos/) for forms
+
+## Installation
+
+1. clone project
+
+`git clone git@github.com:mbarth/grails-twitter-bootstrap-template.git`
+
+2. Edit application.properties file
+
+`app.name=your-app-name`
+
