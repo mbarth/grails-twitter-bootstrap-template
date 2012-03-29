@@ -1,7 +1,7 @@
 modules = {
    scaffolding {
       dependsOn 'bootstrap'
-      resource url: 'css/scaffolding.css'
+      resource url: '/css/scaffolding.css'
    }
 
    webshimsStatic {
